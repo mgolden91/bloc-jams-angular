@@ -46,7 +46,16 @@
           var getSongIndex = function(song){
               return currentAlbum.songs.indexOf(song);
           };
+          
+          SongPlayer.volume = 50;
          
+          SongPlayer.setVolume = function(volume){
+              if (currentBuzzObject){
+                  currentBuzzObject.setVolume(volume);
+              }
+              SongPlayer.volume = volume;
+          };
+          
           SongPlayer.currentSong = null;
          
           SongPlayer.currentTime = null;
